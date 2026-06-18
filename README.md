@@ -28,55 +28,46 @@ AyersX AI is an interactive chatbot application built with Streamlit and powered
 
 ## Installation
 
-Follow these steps to set up and run the project locally:
+Follow these steps to set up and run the project on your computer:
 
 1.  **Clone the Repository:**
-```bash
-    git clone [https://github.com/AyersX/Gemini-RAG-Streamlit.git](https://github.com/AyersX/Gemini-RAG-Streamlit.git)
+    ```bash
+    git clone https://github.com/AyersX/Gemini-RAG-Streamlit.git
     cd Gemini-RAG-Streamlit
     ```
 
 2.  **Create and Activate a Virtual Environment:**
-    
-    * **Using uv (Recommended):**
-```bash
-      uv venv --python 3.10.20
-      # On Windows
-      .\.venv\Scripts\activate
-      # On macOS/Linux
-      source .venv/bin/activate
-      ```
+    ```bash
+    python -m venv venv
+    # On Windows
+    .\venv\Scripts\activate
+    # On macOS/Linux
+    source venv/bin/activate
+    ```
 
-* **Using standard Python venv:**
-```bash
-      python -m venv venv
-      # On Windows
-      .\venv\Scripts\activate
-      # On macOS/Linux
-      source venv/bin/activate
-      ```
+3.  **Install Dependencies:**
+    This project uses `pyproject.toml` for dependency management. You can install dependencies using `uv` (recommended for speed) or `pip`.
 
-3.  **Install Dependencies from `pyproject.toml`:**
+    **Using `uv` (Recommended):**
+    First, install `uv` if you haven't already:
+    ```bash
+    pip install uv
+    ```
+    Then, install the project dependencies:
+    ```bash
+    uv pip install -e .
+    ```
 
-    * **Using uv (Fastest):**
-      If `uv.lock` or a fully configured project structure is present:
-```bash
-      uv sync
-      # Or alternatively: uv pip install -r pyproject.toml
-      ```
-
-    * **Using pip:**
-      Since `uv` project dependencies follow standard Python packaging formatting, standard `pip` can read the `pyproject.toml` file directly:
-```bash
-      pip install .
-      # Or install in editable mode for development:
-      # pip install -e .
-      ```
+    **Using `pip`:**
+    You can install dependencies directly from `pyproject.toml` using `pip`:
+    ```bash
+    pip install .
+    ```
+    *(Alternatively, you can generate a `requirements.txt` from `pyproject.toml` using `uv pip freeze > requirements.txt` and then `pip install -r requirements.txt`.)*
 
 4.  **Set Up Google Gemini API Key:**
-    * Get your API Key from Google AI Studio.
-    * Create a `.env` file in the root directory of your project and add your API key:
-
+    *   Get your API Key from Google AI Studio.
+    *   Create a file named `.env` in the main project folder and add your API key like this:
         ```
         GOOGLE_API_KEY="YOUR_GEMINI_API_KEY"
         ```
@@ -104,7 +95,7 @@ Follow these steps to set up and run the project locally:
     *   Start asking questions. The AI will use the knowledge from your uploaded documents to give relevant answers.
 
 ## Project Structure
-
+```
 .
 ├── app.py                      # Main Streamlit application
 ├── config/                     # Project configuration settings
@@ -124,7 +115,7 @@ Follow these steps to set up and run the project locally:
 │   ├── history.jsonl           # Chat history
 │   └── prompts.txt             # System prompt
 └── pyproject.toml              # Project metadata and dependencies
-
+```
 ## Future Development & Improvements
 
 This project can be improved further, including:
