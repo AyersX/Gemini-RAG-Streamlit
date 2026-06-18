@@ -26,7 +26,7 @@ class MainPage:
     if "chat_disk" not in st.session_state:
       st.session_state["chat_disk"] = self.Memory.load_dict_chat()
     status = ""
-    if st.session_state["chat_disk"] and status:
+    if st.session_state["chat_disk"] and not status:
       try:
         for chat in st.session_state.chat_disk:
           logo = USER_AVATAR if chat["role"] == "user" else AI_AVATAR

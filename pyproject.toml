@@ -1,9 +1,9 @@
 [project]
 name = "v3"
 version = "0.1.0"
-description = "Add your description here"
+description = "Build your own AI knowledge base! This interactive Streamlit RAG chatbot leverages the Google Gemini API to provide contextual answers from your uploaded PDF documents. Engineered with a clear, modular architecture and robust data persistence, it offers a powerful yet easy-to-use solution for intelligent information retrieval."
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = "==3.10.20"
 dependencies = [
     "altair==6.2.1",
     "annotated-doc==0.0.4",
